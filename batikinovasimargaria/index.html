@@ -16,6 +16,9 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         xintegrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 
+    <!-- boostrap icon -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+
     <!-- aos animation -->
     <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
 
@@ -49,12 +52,12 @@
         /* Gaya untuk teks angka (misal: "8 tahun") */
         .highlight-number {
             /* color: #0d6efd; */
-            color: #ffffff;
+            color: #3396D3;
             /* Warna biru Bootstrap */
             font-weight: 700;
-            background-color: #5498fd;
-            padding: 0rem 1rem;
-            border-radius: 4px;
+            /* background-color: #3396D3; */
+            /* padding: 0rem 1rem; */
+            /* border-radius: 4px; */
         }
 
         /* Teks utama lebih tebal dan besar */
@@ -87,9 +90,11 @@
         /* Latar belakang gradien biru muda ke putih */
         .keunggulan-background {
             /* Latar belakang yang menyerupai gambar (gradien vertikal dari biru muda ke putih) */
-            background: linear-gradient(180deg, #c1d6e8 0%, #ffffff 70%);
-            padding-top: 4rem;
-            padding-bottom: 6rem;
+            background:
+                linear-gradient(270deg, #c1d6e8 0%, #ffffff00 100%),
+                url(img/bg-section-1-batik-putih.jpg);
+            /* padding-top: 4rem; */
+            /* padding-bottom: 6rem; */
             position: relative;
             overflow: hidden;
             /* Penting untuk menjaga konten di dalamnya */
@@ -99,9 +104,9 @@
         .card-overlay-image {
             position: relative;
             overflow: hidden;
-            border-radius: 0.5rem;
+            /* border-radius: 0.3rem; */
             transition: transform 0.3s ease-in-out;
-            min-height: 350px;
+            /* min-height: 350px; */
             /* Tinggi card minimum */
             cursor: pointer;
             /* Menandakan elemen dapat diklik */
@@ -112,7 +117,7 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            filter: brightness(0.7);
+            filter: brightness(0.6);
             /* Meredupkan gambar agar teks lebih menonjol */
             transition: filter 0.3s;
         }
@@ -125,7 +130,7 @@
             right: 0;
             padding: 1.5rem;
             color: white;
-            font-weight: 700;
+            font-weight: 600;
             font-size: 1.5rem;
             line-height: 1.2;
             text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
@@ -191,13 +196,25 @@
         /* STYLE UNTUK BAGIAN CTA BATIK */
         /* ============================ */
         .cta-batik-background {
-            /* Warna cokelat yang samar (gunakan filter untuk menciptakan efek buram dan warna yang mirip) */
-            background-color: #a4815a;
+            /* UBAH: background-color: #6c5b4c; */
+
+            /* GANTI DENGAN GRADIENT */
+            background-image: linear-gradient(to right,
+                    /* Arah gradien: dari Kiri-Atas ke Kanan-Bawah */
+                    #6c5b4c,
+                    /* Warna Awal (Lebih Dominan Cokelat Tua) */
+                    #caa88b
+                    /* Warna Akhir (Lebih Terang Cokelat Muda) */
+                );
+
             position: relative;
-            overflow: hidden;
+            /* overflow: hidden; */
             padding: 4rem 0;
+            z-index: 2;
+            /* Penting: Pastikan gradien ini di atas gambar batik ::before (z-index: 1) */
         }
 
+        /* Background image/pattern (Placeholder) */
         /* Background image/pattern (Placeholder) */
         .cta-batik-background::before {
             content: '';
@@ -206,14 +223,10 @@
             left: 0;
             width: 100%;
             height: 100%;
-            /* Gambar latar belakang samar, ganti dengan gambar batik resolusi rendah yang buram */
-            background-image: url('https://placehold.co/1200x400/a4815a/ffffff?text=Motif+Batik+Samar');
+            background-image: url('img/bg-cta-batik.jpg');
             background-size: cover;
             background-position: center;
-            opacity: 0.3;
-            /* Tingkat keburaan/samar */
-            filter: blur(2px) grayscale(50%);
-            /* Efek buram dan sedikit abu-abu */
+            opacity: 0.1;
             z-index: 1;
         }
 
@@ -353,7 +366,7 @@
 
             <!-- Logo (sesuaikan dengan logo BM) -->
             <a class="navbar-brand fw-bold fs-3 me-5" href="#">
-                <span style="color: #0d6efd;">BIM</span>
+                <span style="color: #3396D3;">BIM</span>
                 <!-- <span class="fs-6 fw-normal d-block" style="color: #6c757d; margin-top: -5px;">PT. Bangun Mandiri</span> -->
             </a>
 
@@ -382,11 +395,12 @@
                         <a class="nav-link" href="#">Showroom</a>
                     </li>
                     <li class="nav-item d-lg-none">
-                        <a class="btn btn-primary" href="#">Hubungi kami</a>
+                        <a class="btn btn-primary" style="background-color: #3396D3;" href="#">Hubungi kami</a>
                     </li>
                 </ul>
                 <div class="ms-auto">
-                    <a href="#" class="btn btn-primary d-none d-lg-block">Hubungi kami</a>
+                    <a href="#" class="btn btn-primary d-none d-lg-block" style="background-color: #3396D3;">Hubungi
+                        kami</a>
                 </div>
                 <!-- Tombol Hubungi Kami di kanan (diletakkan di dalam collapse untuk mobile) -->
             </div>
@@ -402,7 +416,7 @@
             <div class="row align-items-center">
 
                 <!-- Kolom Kiri: Teks dan Tombol -->
-                <div data-aos="fade-right" class="col mb-5 mb-lg-0">
+                <div data-aos="fade-left" class="col mb-5 mb-lg-0">
 
                     <h1 class="hero-headline fw-normal">
                         <span class="highlight-number">8 tahun</span> pengalaman memproduksi batik dengan kualitas
@@ -414,13 +428,13 @@
                     </p>
 
                     <a href="#" class="btn btn-info btn-lg text-white"
-                        style="background-color: #0d6efd; border-color: #0d6efd; ">
+                        style="background-color: #3396D3; border-color: #3396D3; ">
                         Hubungi kami sekarang
                     </a>
                 </div>
 
                 <!-- Kolom Kanan: Gambar -->
-                <div data-aos="fade-left" class="col-auto text-center text-lg-end">
+                <div data-aos="zoom-in-up" class="col-auto text-center text-lg-end">
                     <!-- Placeholder untuk gambar model batik -->
                     <img src="img/hero-img.png" class="img-fluid" alt="Model mengenakan pakaian batik modern"
                         style="max-height: 500px; object-fit: cover;">
@@ -436,24 +450,24 @@
         <div class="partner-description">
 
             <!-- Judul Tengah -->
-            <h2 data-aos="fade-down" class="display-6 fw-bold mb-4">
+            <h2 data-aos="fade-down" class="display-6 fw-bold mb-5 text-center">
                 Partner Batik dan Garmen
                 <br>
                 untuk Bisnis Maupun Kebutuhan Pribadi
             </h2>
 
             <!-- Teks Deskripsi -->
-            <p data-aos="fade-left" class="lead text-muted mb-3">
+            <p data-aos="fade-right" class="lead text-muted mb-3">
                 Batik Innovation Margaria adalah mitra terpercaya dalam penyediaan batik, baik berupa kain ataupun
                 produk garmen bagi berbagai kebutuhan bisnis maupun personal. Sejak 2017, kami menghadirkan inovasi
                 batik berkualitas tinggi yang memadukan warisan budaya dengan teknologi produksi modern.
             </p>
-            <p class="lead text-muted mb-3">
+            <p data-aos="fade-right" class="lead text-muted mb-3">
                 Kami melayani kebutuhan seragam korporasi, hotel, instansi, serta pesanan ekspor dengan kapasitas
                 produksi besar dan kontrol kualitas ketat. Bagi individu, kami juga menyediakan koleksi eksklusif batik
                 siap pakai dan layanan *custom design*.
             </p>
-            <p class="lead text-muted mb-5">
+            <p data-aos="fade-right" class="lead text-muted mb-5">
                 Dengan dukungan tim ahli dan pengrajin batik berpengalaman di Yogyakarta, kami berkomitmen menghadirkan
                 produk yang tidak hanya indah secara estetika, tetapi juga unggul dalam kualitas dan ketepatan waktu.
             </p>
@@ -490,12 +504,12 @@
     <!-- ======================= -->
     <!-- BAGIAN KEUNGGULAN       -->
     <!-- ======================= -->
-    <section class="keunggulan-background">
+    <section class="keunggulan-background py-5">
         <div class="container">
             <div class="row mb-5">
-                <div class="col-12">
-                    <p class="text-secondary fw-bold mb-0">Kenapa BIM</p>
-                    <h2 class="display-5 fw-bold">Keunggulan Kami</h2>
+                <div data-aos="fade-right" class="col-12">
+                    <p class="text-secondary fs-5 mb-0">Kenapa BIM</p>
+                    <h2 class="fw-semibold">Keunggulan Kami</h2>
                 </div>
             </div>
 
@@ -503,10 +517,9 @@
             <div class="row g-4">
 
                 <!-- Keunggulan 1: All Inclusive Service -->
-                <div class="col-lg-3 col-md-6 col-sm-12">
+                <div data-aos="fade-down" class="col-lg-3 col-md-6 col-sm-12 pt-5">
                     <div class="card-overlay-image shadow-lg">
-                        <img src="https://placehold.co/400x500/cccccc/333333?text=Jahit+Garmen"
-                            alt="Layanan Garmen Lengkap">
+                        <img src="img/marga-1-menjahit.png" alt="Layanan Garmen Lengkap">
                         <div class="card-text-overlay">
                             All inclusive service
                         </div>
@@ -514,10 +527,9 @@
                 </div>
 
                 <!-- Keunggulan 2: Produksi Cepat -->
-                <div class="col-lg-3 col-md-6 col-sm-12">
+                <div data-aos="fade-up" class="col-lg-3 col-md-6 col-sm-12">
                     <div class="card-overlay-image shadow-lg">
-                        <img src="https://placehold.co/400x500/cccccc/333333?text=Proses+Produksi"
-                            alt="Proses Produksi Cepat">
+                        <img src="img/marga-2-produksi-cepat.png" alt="Proses Produksi Cepat">
                         <div class="card-text-overlay">
                             Produksi Cepat
                         </div>
@@ -525,9 +537,9 @@
                 </div>
 
                 <!-- Keunggulan 3: Desain Custom -->
-                <div class="col-lg-3 col-md-6 col-sm-12">
+                <div data-aos="fade-down" class="col-lg-3 col-md-6 col-sm-12 pt-5">
                     <div class="card-overlay-image shadow-lg">
-                        <img src="https://placehold.co/400x500/cccccc/333333?text=Desain+Batik" alt="Desain Custom">
+                        <img src="img/marga-3-desain-custom.png" alt="Desain Custom">
                         <div class="card-text-overlay">
                             Desain custom
                         </div>
@@ -535,10 +547,9 @@
                 </div>
 
                 <!-- Keunggulan 4: Kemasan Eksklusif -->
-                <div class="col-lg-3 col-md-6 col-sm-12">
+                <div data-aos="fade-up" class="col-lg-3 col-md-6 col-sm-12">
                     <div class="card-overlay-image shadow-lg">
-                        <img src="https://placehold.co/400x500/cccccc/333333?text=Kemasan+Hadiah"
-                            alt="Kemasan Eksklusif">
+                        <img src="img/marga-4-kemasan-ekslusif.png" alt="Kemasan Eksklusif">
                         <div class="card-text-overlay">
                             Kemasan <br> Eksklusif
                         </div>
@@ -555,9 +566,9 @@
     <section class="produk-background">
         <div class="container">
             <div class="row mb-5">
-                <div class="col-12">
-                    <p class="fw-bold mb-0">Produk kami</p>
-                    <h2 class="display-5 fw-bold">Lengkapi gaya dengan sentuhan personalmu</h2>
+                <div data-aos="fade-right" class="col-12">
+                    <p class="text-secondary fs-5 mb-0">Produk kami</p>
+                    <h2 class="fw-semibold">Lengkapi gaya dengan sentuhan personalmu</h2>
                 </div>
             </div>
 
@@ -565,10 +576,9 @@
             <div class="row g-4">
 
                 <!-- Kategori 1: Pakaian -->
-                <div class="col-lg-4 col-md-12">
+                <div data-aos="zoom-in-down" class="col-lg-4 col-md-12">
                     <div class="card-overlay-image shadow-lg">
-                        <img src="https://placehold.co/450x650/333333/ffffff?text=Pakaian+Batik"
-                            alt="Koleksi Pakaian Batik" style="min-height: 450px;">
+                        <img src="img/produk-kami-1.jpeg" alt="Koleksi Pakaian Batik" style="min-height: 450px;">
                         <div class="product-overlay-text">
                             <h3>Pakaian</h3>
                             <p>Dibuat dengan detail dari teknik batik terbaik, setiap potongan pakaian menghadirkan
@@ -584,10 +594,9 @@
                 </div>
 
                 <!-- Kategori 2: Hampers -->
-                <div class="col-lg-4 col-md-12">
+                <div data-aos="zoom-in-down" class="col-lg-4 col-md-12">
                     <div class="card-overlay-image shadow-lg">
-                        <img src="https://placehold.co/450x650/333333/ffffff?text=Hampers+Kain"
-                            alt="Hampers dan Kado Eksklusif" style="min-height: 450px;">
+                        <img src="img/produk-kami-2.png" alt="Hampers dan Kado Eksklusif" style="min-height: 450px;">
                         <div class="product-overlay-text">
                             <h3>Hampers</h3>
                             <p>Pilihan hadiah eksklusif berisi tumbler batik custom, laptop sleeve, dan kain batik -
@@ -603,10 +612,10 @@
                 </div>
 
                 <!-- Kategori 3: Kain -->
-                <div class="col-lg-4 col-md-12">
+                <div data-aos="zoom-in-down" class="col-lg-4 col-md-12">
                     <div class="card-overlay-image shadow-lg">
-                        <img src="https://placehold.co/450x650/333333/ffffff?text=Kain+Batik+Display"
-                            alt="Kain Batik Tulis, Cap, Printing" style="min-height: 450px;">
+                        <img src="img/produk-kami-3.jpg" alt="Kain Batik Tulis, Cap, Printing"
+                            style="min-height: 450px;">
                         <div class="product-overlay-text">
                             <h3>Kain</h3>
                             <p>Tersedia berbagai pilihan kain batik tulis, cap, dan printing. Dapat dipesan custom
@@ -633,24 +642,23 @@
             <div class="row align-items-center">
 
                 <!-- Kolom Kiri: Gambar Produk -->
-                <div class="col-lg-5 col-md-12 text-center text-lg-start mb-4 mb-lg-0">
+                <div data-aos="zoom-in" class="col-lg-5 col-md-12 text-center text-lg-start mb-4 mb-lg-0">
                     <div class="cta-image-wrapper">
                         <!-- Placeholder untuk gambar kain batik dalam kotak -->
-                        <img src="https://placehold.co/400x300/f8f8f8/333333?text=Kain+Batik+Kotak"
-                            class="img-fluid rounded-3 shadow-lg" alt="Kain batik siap pakai dalam kotak"
-                            onerror="this.onerror=null; this.src='https://placehold.co/400x300/f8f8f8/333333?text=Kain+Batik+Kotak+Placeholder';">
+                        <img src="img/batik-sample-1.jpg" class="img-fluid rounded-3 shadow-lg"
+                            alt="Kain batik siap pakai dalam kotak">
                     </div>
                 </div>
 
                 <!-- Kolom Kanan: Teks CTA dan Tombol -->
-                <div class="col-lg-7 col-md-12 cta-text-content">
-                    <p class="fw-bold mb-1 text-uppercase">Jelajahi Batik Kami</p>
-                    <h2>Lebih dari 100 Batik Siap Pakai</h2>
+                <div data-aos="fade-right" class="col-lg-7 col-md-12 cta-text-content">
+                    <p class="mb-1">Jelajahi Batik Kami</p>
+                    <h2 class="fw-semibold">Lebih dari 100 Batik Siap Pakai</h2>
                     <p class="lead fw-light">Temukan beragam pilihan batik untuk mendapatkan yang paling sesuai dengan
                         kebutuhanmu.</p>
 
                     <a href="#" class="btn btn-info btn-lg text-white"
-                        style="background-color: #0d6efd; border-color: #0d6efd;">
+                        style="background-color: #3396D3; border-color: #3396D3;">
                         Unduh Katalog
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
                             class="bi bi-arrow-right ms-2" viewBox="0 0 16 16">
@@ -668,15 +676,15 @@
     <!-- ======================= -->
     <section class="container my-5 py-5">
         <div class="row mb-5">
-            <div class="col-12">
-                <h2 class="display-5 fw-bold">Kenapa memilih BIM</h2>
+            <div data-aos="fade-right" class="col-12">
+                <h2 class="display-5 fw-semibold">Kenapa memilih BIM</h2>
             </div>
         </div>
 
         <div class="row g-4 justify-content-center">
 
             <!-- Card 1: Keahlian -->
-            <div class="col-lg-4 col-md-6">
+            <div data-aos="zoom-in" class="col-lg-4 col-md-6">
                 <div class="detail-card">
                     <div class="detail-card-heading keahlian">Keahlian</div>
                     <p class="text-muted">Didukung oleh pengrajin berpengalaman dan tim produksi profesional, BIM
@@ -686,7 +694,7 @@
             </div>
 
             <!-- Card 2: Desain Sesuai -->
-            <div class="col-lg-4 col-md-6">
+            <div data-aos="zoom-in" class="col-lg-4 col-md-6">
                 <div class="detail-card">
                     <div class="detail-card-heading desain">Desain Sesuai</div>
                     <p class="text-muted">Kami memahami bahwa setiap klien memiliki karakter dan kebutuhan berbeda.
@@ -696,7 +704,7 @@
             </div>
 
             <!-- Card 3: Layanan Lengkap -->
-            <div class="col-lg-4 col-md-6">
+            <div data-aos="zoom-in" class="col-lg-4 col-md-6">
                 <div class="detail-card">
                     <div class="detail-card-heading layanan">Layanan lengkap</div>
                     <p class="text-muted">Mulai dari pembuatan motif, produksi kain, hingga finishing menjadi pakaian
@@ -730,7 +738,7 @@
                 </div>
 
                 <!-- Kolom 2: Navigasi (Telusuri) -->
-                <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
                     <h5 class="fw-bold mb-4">Telusuri</h5>
                     <div class="row footer-link-group">
                         <div class="col-6">
@@ -747,36 +755,24 @@
                 </div>
 
                 <!-- Kolom 3: Media Sosial dan Bahasa -->
-                <div class="col-lg-5 col-md-6">
+                <div class="col-lg-4 col-md-6">
                     <h5 class="fw-bold mb-4">Temukan kami di</h5>
 
                     <!-- Ikon Media Sosial -->
                     <div class="mb-4">
                         <!-- WhatsApp (menggunakan SVG) -->
-                        <a href="#" class="social-icon-link">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
-                                class="bi bi-whatsapp" viewBox="0 0 16 16">
-                                <path
-                                    d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.513.068 7.854c0 1.454.43 2.853 1.257 4.072l-.746 2.768 2.817-.746A7.72 7.72 0 0 0 7.994 15.7a7.854 7.854 0 0 0 5.601-2.326.75.75 0 0 0-.012-.012l-.01-.01c-.131-.132-.308-.21-.5-.21h-2.12c-.192 0-.374-.078-.505-.21l-1.464-1.464a.75.75 0 0 1-.035-1.06l.764-.764a.75.75 0 0 1 1.06-.035l1.464 1.464c.131.132.308.21.5.21h.75c.192 0 .374-.078.505-.21l.464-.464c.131-.132.21-.308.21-.5V7.994c0-.192-.078-.374-.21-.505l-.464-.464c-.131-.132-.308-.21-.5-.21h-2.12c-.192 0-.374-.078-.505-.21l-1.464-1.464a.75.75 0 0 1-.035-1.06l.764-.764a.75.75 0 0 1 1.06-.035l1.464 1.464c.131.132.308.21.5.21h.75c.192 0 .374-.078.505-.21l.464-.464c.131-.132.21-.308.21-.5z" />
-                            </svg>
+                        <a href="#" class="social-icon-link text-decoration-none">
+                            <i class="bi bi-whatsapp"></i>
                         </a>
 
                         <!-- Instagram (menggunakan SVG) -->
-                        <a href="#" class="social-icon-link">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
-                                class="bi bi-instagram" viewBox="0 0 16 16">
-                                <path
-                                    d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.429a3.89 3.89 0 0 0-1.417.923A3.89 3.89 0 0 0 .429 2.76C.222 3.269.088 3.85.048 4.703.01 5.556 0 5.829 0 8s.01 2.444.048 3.297c.04.853.174 1.434.381 1.943.206.51.487.954.923 1.417.436.463.88.75 1.417.923.51.206 1.091.34 1.943.38.853.04 1.126.064 3.297.064s2.444-.01 3.297-.048c.853-.04 1.434-.174 1.943-.381.51-.206.954-.487 1.417-.923.463-.436.75-.88 0-1.417-.206-.51-.34-1.091-.381-1.943-.04-.853-.064-1.126-.064-3.297s.01-2.444.048-3.297c.04-.853.174-1.434.381-1.943.206-.51.487-.954.923-1.417.436-.463.88-.75 1.417-.923.51-.206 1.091-.34 1.943-.38.853-.04 1.126-.064 3.297-.064zM8 12c-2.209 0-4-1.791-4-4s1.791-4 4-4 4 1.791 4 4-1.791 4-4 4zm4.271-4.729c-.714 0-1.292-.578-1.292-1.292s.578-1.292 1.292-1.292 1.292.578 1.292 1.292-.578 1.292-1.292 1.292z" />
-                            </svg>
+                        <a href="#" class="social-icon-link text-decoration-none">
+                            <i class="bi bi-instagram"></i>
                         </a>
 
                         <!-- YouTube (menggunakan SVG) -->
                         <a href="#" class="social-icon-link">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
-                                class="bi bi-youtube" viewBox="0 0 16 16">
-                                <path
-                                    d="M8.051 1.999h.001c.854 0 1.636.082 2.348.243a3.543 3.543 0 0 1 2.058 1.433c.478.718.736 1.62.743 2.585.007.974.007 1.928 0 2.902a3.543 3.543 0 0 1-.743 2.585 3.543 3.543 0 0 1-2.058 1.433c-.712.16-1.5-.243-2.348-.243s-1.636.082-2.348.243a3.543 3.543 0 0 1-2.058-1.433 3.543 3.543 0 0 1-.743-2.585c-.007-.974-.007-1.928 0-2.902a3.543 3.543 0 0 1 .743-2.585 3.543 3.543 0 0 1 2.058-1.433c.712-.16 1.5-.243 2.348-.243zM6.5 6v4l3.5-2z" />
-                            </svg>
+                            <i class="bi bi-youtube"></i>
                         </a>
                     </div>
 
