@@ -43,7 +43,7 @@
         /* Warna latar belakang Hero Section (berdasarkan gambar) */
         .hero-background {
             background-color: #c1d6e8;
-            min-height: 550px;
+            /* min-height: 550px; */
             /* Tinggi minimum untuk Hero Section */
             padding-top: 3rem;
             /* padding-bottom: 5rem; */
@@ -433,12 +433,11 @@
                     </a>
                 </div>
 
-                <!-- Kolom Kanan: Gambar -->
-                <div data-aos="zoom-in-up" class="col-auto text-center text-lg-end">
-                    <!-- Placeholder untuk gambar model batik -->
+                <div data-aos="zoom-in-up" class="col-auto text-center text-lg-end d-none d-lg-block">
                     <img src="img/hero-img.png" class="img-fluid" alt="Model mengenakan pakaian batik modern"
                         style="max-height: 500px; object-fit: cover;">
                 </div>
+                <!-- Kolom Kanan: Gambar -->
             </div>
         </div>
     </header>
@@ -474,29 +473,60 @@
         </div>
 
         <!-- Tiga Kolom Gambar -->
-        <div class="row g-4 mt-5">
+        <div class="row g-4 mt-5 d-none d-md-flex">
             <!-- Gambar 1 -->
             <div data-aos="fade-up" class="col-md-4 col-sm-12">
                 <img src="img/margaria-batik-1.jpg" class="img-fluid rounded-3 shadow-sm"
-                    alt="Model mengenakan garmen warna pink muda"
-                    onerror="this.onerror=null; this.src='https://placehold.co/450x650/f0f0f0/333333?text=Model+1';"
-                    style="object-fit: cover; width: 100%; height: auto;">
+                    alt="Model mengenakan garmen warna pink muda">
             </div>
 
             <!-- Gambar 2 -->
             <div data-aos="fade-up" class="col-md-4 col-sm-12">
                 <img src="img/margaria-batik-2.jpg" class="img-fluid rounded-3 shadow-sm"
-                    alt="Model mengenakan garmen warna biru muda"
-                    onerror="this.onerror=null; this.src='https://placehold.co/450x650/f0f0f0/333333?text=Model+2';"
-                    style="object-fit: cover; width: 100%; height: auto;">
+                    alt="Model mengenakan garmen warna biru muda">
             </div>
 
             <!-- Gambar 3 -->
             <div data-aos="fade-up" class="col-md-4 col-sm-12">
                 <img src="img/margaria-batik-3.jpg" class="img-fluid rounded-3 shadow-sm"
-                    alt="Model mengenakan garmen warna hitam"
-                    onerror="this.onerror=null; this.src='https://placehold.co/450x650/f0f0f0/333333?text=Model+3';"
-                    style="object-fit: cover; width: 100%; height: auto;">
+                    alt="Model mengenakan garmen warna hitam">
+            </div>
+        </div>
+        <!-- on mobile change to carousel -->
+        <div class="d-md-none">
+            <div id="batikCarousel" class="carousel slide" data-bs-ride="carousel">
+
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#batikCarousel" data-bs-slide-to="0" class="active"
+                        aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#batikCarousel" data-bs-slide-to="1"
+                        aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#batikCarousel" data-bs-slide-to="2"
+                        aria-label="Slide 3"></button>
+                </div>
+
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="img/margaria-batik-1.jpg" class="d-block w-100 rounded" alt="Model Batik 1">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="img/margaria-batik-2.jpg" class="d-block w-100 rounded" alt="Model Batik 2">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="img/margaria-batik-3.jpg" class="d-block w-100 rounded" alt="Model Batik 3">
+                    </div>
+                </div>
+
+                <button class="carousel-control-prev" type="button" data-bs-target="#batikCarousel"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#batikCarousel"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
             </div>
         </div>
     </section>
@@ -514,45 +544,120 @@
             </div>
 
             <!-- 4 Kolom Keunggulan -->
-            <div class="row g-4">
+            <div class="row">
 
-                <!-- Keunggulan 1: All Inclusive Service -->
-                <div data-aos="fade-down" class="col-lg-3 col-md-6 col-sm-12 pt-5">
-                    <div class="card-overlay-image shadow-lg">
-                        <img src="img/marga-1-menjahit.png" alt="Layanan Garmen Lengkap">
-                        <div class="card-text-overlay">
-                            All inclusive service
+                <div class="row g-4 d-none d-lg-flex justify-content-center">
+
+                    <div data-aos="fade-down" class="col-lg-3 col-md-6 col-sm-12 pt-5">
+                        <div class="card-overlay-image shadow-lg">
+                            <img src="img/marga-1-menjahit.png" alt="Layanan Garmen Lengkap">
+                            <div class="card-text-overlay">
+                                All inclusive service
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <!-- Keunggulan 2: Produksi Cepat -->
-                <div data-aos="fade-up" class="col-lg-3 col-md-6 col-sm-12">
-                    <div class="card-overlay-image shadow-lg">
-                        <img src="img/marga-2-produksi-cepat.png" alt="Proses Produksi Cepat">
-                        <div class="card-text-overlay">
-                            Produksi Cepat
+                    <div data-aos="fade-up" class="col-lg-3 col-md-6 col-sm-12">
+                        <div class="card-overlay-image shadow-lg">
+                            <img src="img/marga-2-produksi-cepat.png" alt="Proses Produksi Cepat">
+                            <div class="card-text-overlay">
+                                Produksi Cepat
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <!-- Keunggulan 3: Desain Custom -->
-                <div data-aos="fade-down" class="col-lg-3 col-md-6 col-sm-12 pt-5">
-                    <div class="card-overlay-image shadow-lg">
-                        <img src="img/marga-3-desain-custom.png" alt="Desain Custom">
-                        <div class="card-text-overlay">
-                            Desain custom
+                    <div data-aos="fade-down" class="col-lg-3 col-md-6 col-sm-12 pt-5">
+                        <div class="card-overlay-image shadow-lg">
+                            <img src="img/marga-3-desain-custom.png" alt="Desain Custom">
+                            <div class="card-text-overlay">
+                                Desain custom
+                            </div>
                         </div>
                     </div>
+
+                    <div data-aos="fade-up" class="col-lg-3 col-md-6 col-sm-12">
+                        <div class="card-overlay-image shadow-lg">
+                            <img src="img/marga-4-kemasan-ekslusif.png" alt="Kemasan Eksklusif">
+                            <div class="card-text-overlay">
+                                Kemasan <br> Eksklusif
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
 
-                <!-- Keunggulan 4: Kemasan Eksklusif -->
-                <div data-aos="fade-up" class="col-lg-3 col-md-6 col-sm-12">
-                    <div class="card-overlay-image shadow-lg">
-                        <img src="img/marga-4-kemasan-ekslusif.png" alt="Kemasan Eksklusif">
-                        <div class="card-text-overlay">
-                            Kemasan <br> Eksklusif
+
+                <div class="d-lg-none">
+                    <div id="KeunggulanCarousel" class="carousel slide" data-bs-ride="carousel">
+
+                        <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#KeunggulanCarousel" data-bs-slide-to="0"
+                                class="active"></button>
+                            <button type="button" data-bs-target="#KeunggulanCarousel" data-bs-slide-to="1"></button>
+                            <button type="button" data-bs-target="#KeunggulanCarousel" data-bs-slide-to="2"></button>
+                            <button type="button" data-bs-target="#KeunggulanCarousel" data-bs-slide-to="3"></button>
                         </div>
+
+                        <div class="carousel-inner pb-5">
+
+                            <div class="carousel-item active">
+                                <div class="col-12 text-center">
+                                    <div class="card-overlay-image shadow-lg">
+                                        <img src="img/marga-1-menjahit.png" alt="Layanan Garmen Lengkap" class="w-100">
+                                        <div class="card-text-overlay">
+                                            All inclusive service
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="carousel-item">
+                                <div class="col-12 text-center">
+                                    <div class="card-overlay-image shadow-lg">
+                                        <img src="img/marga-2-produksi-cepat.png" alt="Proses Produksi Cepat"
+                                            class="w-100">
+                                        <div class="card-text-overlay">
+                                            Produksi Cepat
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="carousel-item">
+                                <div class="col-12 text-center">
+                                    <div class="card-overlay-image shadow-lg">
+                                        <img src="img/marga-3-desain-custom.png" alt="Desain Custom" class="w-100">
+                                        <div class="card-text-overlay">
+                                            Desain custom
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="carousel-item">
+                                <div class="col-12 text-center">
+                                    <div class="card-overlay-image shadow-lg">
+                                        <img src="img/marga-4-kemasan-ekslusif.png" alt="Kemasan Eksklusif"
+                                            class="w-100">
+                                        <div class="card-text-overlay">
+                                            Kemasan <br> Eksklusif
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <button class="carousel-control-prev" type="button" data-bs-target="#KeunggulanCarousel"
+                            data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#KeunggulanCarousel"
+                            data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
                     </div>
                 </div>
 
@@ -651,7 +756,7 @@
                 </div>
 
                 <!-- Kolom Kanan: Teks CTA dan Tombol -->
-                <div data-aos="fade-right" class="col-lg-7 col-md-12 cta-text-content">
+                <div data-aos="fade-right" class="col-lg-7 col-md-12 cta-text-content px-5">
                     <p class="mb-1">Jelajahi Batik Kami</p>
                     <h2 class="fw-semibold">Lebih dari 100 Batik Siap Pakai</h2>
                     <p class="lead fw-light">Temukan beragam pilihan batik untuk mendapatkan yang paling sesuai dengan
