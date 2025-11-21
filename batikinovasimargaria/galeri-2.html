@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tentang Kami : Batik Inovasi Margaria</title>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+
+    <!-- CSS Bootstrap 5.3 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        xintegrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <!-- boostrap icon -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+
+    <!-- aos animation -->
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+    <!-- CSS Kustom untuk menyesuaikan warna latar belakang dan font -->
+    <link rel="stylesheet" href="css/custom.css">
+
+    <style>
+        /* 1. Custom Hero Section Style - Meniru gambar */
+        .hero-galeri {
+            /* Tinggi yang cukup menonjol */
+            min-height: 50vh;
+            position: relative;
+            overflow: hidden;
+
+            /* Gambar Latar Belakang (Placeholder) */
+            /* Anda bisa mengganti URL placeholder ini dengan gambar asli proses produksi batik Anda */
+            /* background-image: url('https://placehold.co/1920x800/171717/ffffff?text=Batik+Innovation+Margaria+Production+Floor'); */
+            background-image: url('img/bg-hero-about.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+
+        /* 2. Blue Overlay */
+        .hero-galeri::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            /* Menggunakan warna biru cerah (seperti logo) dengan opasitas 0.7 */
+            /* background-color: rgba(51, 150, 211, 0.9); */
+            background-color: #6d95c5e8;
+            /* #3396D3 @ 75% opacity */
+            z-index: 1;
+        }
+
+        /* 3. Konten (Teks) di atas overlay */
+        .hero-galeri>.container {
+            position: relative;
+            z-index: 2;
+        }
+
+        /* 4. Custom Footer Background (Warna Navy/Deep Blue) */
+
+
+        /* --- STYLING KHUSUS UNTUK GALERI PRODUK BARU --- */
+        .product-card {
+            position: relative;
+            overflow: hidden;
+            border-radius: 4px;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .product-card img {
+            width: 100%;
+            height: 350px;
+            /* Tinggi tetap untuk kartu */
+            object-fit: cover;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .product-card:hover img {
+            transform: scale(1.05);
+        }
+
+        .card-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 1rem;
+            background-color: rgba(0, 0, 0, 0.8);
+            color: white;
+            /* Tambahkan transisi untuk animasi smooth */
+            transition: transform 0.3s ease-in-out, background-color 0.3s;
+            /* Pindahkan overlay ke bawah, keluar dari tampilan */
+            transform: translateY(100%);
+        }
+
+        /* Aturan baru: saat product-card di-hover, card-overlay muncul */
+        .product-card:hover .card-overlay {
+            transform: translateY(0);
+            /* Pindahkan ke posisi aslinya */
+        }
+
+        .card-overlay h5 {
+            font-weight: 600;
+            margin-bottom: 5px;
+            font-size: 1.5rem;
+        }
+
+        .card-overlay a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .card-overlay a:hover {
+            color: #3396D3;
+            /* Warna biru BIM */
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .hero-galeri {
+                min-height: 40vh;
+            }
+
+            .hero-galeri h1 {
+                font-size: 2.25rem;
+            }
+
+            .product-card img {
+                height: 280px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- ======================= -->
+    <!-- NAVIGASI / NAVBAR       -->
+    <!-- ======================= -->
+    <nav class="navbar navbar-expand-lg bg-white sticky-top">
+        <div class="container py-2">
+
+            <!-- Logo (sesuaikan dengan logo BM) -->
+            <a class="navbar-brand fw-bold fs-3 me-5" href="#">
+                <span style="color: #3396D3;">BIM</span>
+                <!-- <span class="fs-6 fw-normal d-block" style="color: #6c757d; margin-top: -5px;">PT. Bangun Mandiri</span> -->
+            </a>
+
+            <!-- Tombol Toggler untuk mobile -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Menu Navigasi -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav gap-4">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Beranda</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">Tentang kami</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="galeri-1.html">Produk</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Material</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Showroom</a>
+                    </li>
+                    <li class="nav-item d-lg-none">
+                        <a class="btn btn-primary" href="#">Hubungi kami</a>
+                    </li>
+                </ul>
+                <div class="ms-auto">
+                    <a href="#" class="btn btn-primary d-none d-lg-block">Hubungi
+                        kami</a>
+                </div>
+                <!-- Tombol Hubungi Kami di kanan (diletakkan di dalam collapse untuk mobile) -->
+            </div>
+
+        </div>
+    </nav>
+
+
+    <!-- ======================= -->
+    <!-- HERO SECTION (TENTANG KAMI) -->
+    <!-- ======================= -->
+    <header class="hero-galeri d-flex align-items-center">
+        <div class="container text-white" data-aos="fade-up">
+            <!-- Teks kecil "Tentang kami" -->
+            <p class="mb-2 fs-5">Galeri</p>
+
+            <!-- Judul utama -->
+            <h1 class="display-5 fw-semibold" style="max-width: 800px;">
+                Temukan Koleksi Batik BIM
+            </h1>
+        </div>
+    </header>
+
+
+    <!-- ======================= -->
+    <!-- MAIN CONTENT START -->
+    <!-- ======================= -->
+    <main>
+        <!-- ======================= -->
+        <!-- SECTION 1: KATEGORI PRODUK -->
+        <!-- ======================= -->
+        <section class="py-5">
+            <div class="container">
+                <div class="row g-4" id="product-categories">
+
+                    <!-- Kategori 1: Scarves -->
+                    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                        <div class="product-card">
+                            <img src="img/galeri-7.png" alt="Scarf Batik">
+                            <div class="card-overlay">
+                                <h5 class="mb-1">Scarves</h5>
+                                <a href="#">Lihat produk <i class="bi bi-arrow-right ms-2"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Pagination -->
+                <div class="row mt-5">
+                    <div class="col-12 d-flex justify-content-center">
+                        <nav aria-label="Page navigation example">
+                            <ul class="pagination shadow-sm rounded-3">
+                                <li class="page-item disabled">
+                                    <a class="page-link" href="#" aria-label="Previous">
+                                        <span aria-hidden="true">&lt;</span>
+                                    </a>
+                                </li>
+                                <li class="page-item"><a class="page-link" href="galeri-1.html">1</a></li>
+                                <li class="page-item active"><a class="page-link" href="galeri-2.html">2</a></li>
+                                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                <li class="page-item disabled"><a class="page-link" href="#">...</a></li>
+                                <li class="page-item"><a class="page-link" href="#">9</a></li>
+                                <li class="page-item"><a class="page-link" href="#">10</a></li>
+                                <li class="page-item">
+                                    <a class="page-link" href="#" aria-label="Next">
+                                        <span aria-hidden="true">&gt;</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+    <!-- ======================= -->
+    <!-- MAIN CONTENT END -->
+    <!-- ======================= -->
+
+
+
+    <!-- ======================= -->
+    <!-- FOOTER LENGKAP (BARU)   -->
+    <!-- ======================= -->
+    <footer class="custom-footer-bg">
+        <div class="container">
+            <div class="row">
+
+                <!-- Kolom 1: Logo dan Kontak -->
+                <div class="col-lg-4 col-md-12 mb-4 mb-lg-0">
+                    <div class="mb-3">
+                        <a class="navbar-brand fw-bold fs-3" href="#">
+                            <span style="color: #0d6efd;">BM</span>
+                            <span class="footer-logo-text d-block">BATIK INNOVATION MARGARIA</span>
+                        </a>
+                    </div>
+
+                    <p class="mb-2">PT. Batik Innovation Margaria Jl. Kemasan No. 58, Purbayan, Kotagede, Yogyakarta,
+                        Indonesia</p>
+                    <p class="mb-0">contact : (62 - 274) 6460004, 6463950</p>
+                </div>
+
+                <!-- Kolom 2: Navigasi (Telusuri) -->
+                <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+                    <h5 class="fw-semibold mb-4">Telusuri</h5>
+                    <div class="row footer-link-group">
+                        <div class="col-6">
+                            <a href="#">Tentang Kami</a>
+                            <a href="#">Produk</a>
+                            <a href="#">Material</a>
+                        </div>
+                        <div class="col-6">
+                            <a href="#">Showroom</a>
+                            <a href="#">Blog</a>
+                            <a href="#">Hubungi kami</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Kolom 3: Media Sosial dan Bahasa -->
+                <div class="col-lg-4 col-md-6">
+                    <h5 class="fw-semibold mb-4">Temukan kami di</h5>
+
+                    <!-- Ikon Media Sosial -->
+                    <div class="mb-4">
+                        <!-- WhatsApp (menggunakan SVG) -->
+                        <a href="#" class="social-icon-link text-decoration-none">
+                            <i class="bi bi-whatsapp"></i>
+                        </a>
+
+                        <!-- Instagram (menggunakan SVG) -->
+                        <a href="#" class="social-icon-link text-decoration-none">
+                            <i class="bi bi-instagram"></i>
+                        </a>
+
+                        <!-- YouTube (menggunakan SVG) -->
+                        <a href="#" class="social-icon-link">
+                            <i class="bi bi-youtube"></i>
+                        </a>
+                    </div>
+
+                    <!-- Dropdown Pilihan Bahasa -->
+                    <div class="dropdown" style="max-width: 150px;">
+                        <button class="btn dropdown-toggle custom-dropdown-toggle" type="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Indonesia
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Indonesia</a></li>
+                            <li><a class="dropdown-item" href="#">English</a></li>
+
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- JavaScript Bootstrap 5.3 Bundle (termasuk Popper) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        xintegrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        // Inisialisasi AOS
+        AOS.init({
+            // Opsional, tapi disarankan
+            duration: 1000, // Durasi animasi dalam milidetik (ms)
+            once: true      // Apakah animasi hanya terjadi sekali saat scrolling ke bawah?
+        });
+    </script>
+</body>
+
+</html>
