@@ -24,6 +24,77 @@
 
     <!-- CSS Kustom untuk menyesuaikan warna latar belakang dan font -->
     <link rel="stylesheet" href="css/custom.css">
+
+    <style>
+        /* --- STYLING KHUSUS UNTUK MODAL E-KATALOG --- */
+        /* Sesuaikan lebar modal */
+        .modal-ekatalog .modal-content {
+            max-width: 700px;
+            margin: auto;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        /* Background biru muda pada body modal */
+        .modal-ekatalog .modal-body {
+            padding: 0;
+            background-color: #deeaf5;
+            /* Warna biru muda */
+        }
+
+        /* Styling konten kiri (gambar) */
+        .modal-image-col {
+            background-image: url('img/katalog-batik.webp');
+            /* Placeholder gambar */
+            background-size: cover;
+            background-position: center;
+            min-height: 350px;
+        }
+
+        /* Styling konten kanan (form) */
+        .modal-form-col {
+            padding: 0.5rem;
+            display: flex;
+            flex-direction: column;
+            /* justify-content: center; */
+        }
+
+        .modal-header-custom {
+            display: flex;
+            justify-content: space-between;
+            /* align-items: center; */
+            margin-bottom: 1rem;
+        }
+
+        .modal-header-custom h5 {
+            font-weight: 700;
+            color: #3396D3;
+            /* Warna BIM Blue */
+        }
+
+        .modal-header-custom .btn-close {
+            /* Styling kustom untuk tombol tutup agar terlihat seperti X di gambar */
+            background: none;
+            border: none;
+            opacity: 1;
+            font-size: 1.5rem;
+            line-height: 1;
+            padding: 0;
+        }
+
+        .modal-header-custom .btn-close:focus {
+            box-shadow: none;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .modal-image-col {
+                min-height: 200px;
+                /* Lebih pendek di mobile */
+            }
+        }
+    </style>
+
 </head>
 
 <body>
@@ -215,7 +286,7 @@
             <!-- 4 Kolom Keunggulan -->
             <div class="row">
 
-                <div class="row g-4 d-none d-lg-flex justify-content-center">
+                <div class="row d-none d-lg-flex justify-content-center">
 
                     <div data-aos="fade-down" class="col-lg-3 col-md-6 col-sm-12 pt-5">
                         <div class="card-overlay-image shadow-lg">
@@ -431,15 +502,15 @@
                     <p class="lead fw-light">Temukan beragam pilihan batik untuk mendapatkan yang paling sesuai dengan
                         kebutuhanmu.</p>
 
-                    <a href="#" class="btn btn-info btn-lg text-white"
-                        style="background-color: #3396D3; border-color: #3396D3;">
+                    <button type="button" class="btn btn-primary btn-lg text-white" id="unduhkatalog"
+                        data-bs-toggle="modal" data-bs-target="#ekatalogModal">
                         Unduh Katalog
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
                             class="bi bi-arrow-right ms-2" viewBox="0 0 16 16">
                             <path fill-rule="evenodd"
                                 d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8" />
                         </svg>
-                    </a>
+                    </button>
                 </div>
             </div>
         </div>
@@ -567,6 +638,58 @@
         </div>
     </footer>
 
+    <!-- ======================= -->
+    <!-- MODAL E-KATALOG (BARU) -->
+    <!-- ======================= -->
+    <div class="modal fade modal-ekatalog" id="ekatalogModal" tabindex="-1" aria-labelledby="ekatalogModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="row g-0">
+                        <!-- Kolom Kiri: Gambar Batik -->
+                        <div class="col-md-6 modal-image-col d-none d-md-block">
+                            <!-- Gambar background didefinisikan di CSS internal -->
+                        </div>
+
+                        <!-- Kolom Kanan: Form -->
+                        <div class="col-md-6 modal-form-col">
+
+                            <div class="modal-header-custom">
+                                <h5 class="mt-5 px-3" id="ekatalogModalLabel">Dapatkan E-katalog BIM</h5>
+                                <!-- Tombol Close Custom -->
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                                    <i class="bi bi-x-circle-fill"></i>
+                                    <!-- Menggunakan ikon Bootstrap untuk tombol tutup -->
+                                </button>
+                            </div>
+
+                            <form>
+                                <div class="px-3">
+                                    <div class="mb-3">
+                                        <label for="inputNama" class="form-label visually-hidden">Nama</label>
+                                        <input type="text" class="form-control" id="inputNama" placeholder="Nama">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="inputEmail" class="form-label visually-hidden">E-mail</label>
+                                        <input type="email" class="form-control" id="inputEmail" placeholder="E-mail">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="inputWhatsapp" class="form-label visually-hidden">Nomor
+                                            Whatsapp</label>
+                                        <input type="text" class="form-control" id="inputWhatsapp"
+                                            placeholder="Nomor Whatsapp">
+                                    </div>
+                                    <button type="submit" class="btn btn-primary w-100 mt-2">Kirim</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
 
     <!-- JavaScript Bootstrap 5.3 Bundle (termasuk Popper) -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
@@ -581,6 +704,20 @@
             duration: 1000, // Durasi animasi dalam milidetik (ms)
             once: true      // Apakah animasi hanya terjadi sekali saat scrolling ke bawah?
         });
+
+        document.addEventListener('DOMContentLoaded', () => {
+            // Cek apakah modal sudah pernah ditampilkan di sesi ini (opsional)
+            // if (sessionStorage.getItem('ekatalogModalShown') !== 'true') {
+
+            setTimeout(() => {
+                const ekatalogModal = new bootstrap.Modal(document.getElementById('ekatalogModal'));
+                ekatalogModal.show();
+                // sessionStorage.setItem('ekatalogModalShown', 'true');
+            }, 3000); // Munculkan setelah 3000 ms (3 detik)
+
+            // }
+        });
+
     </script>
 </body>
 
